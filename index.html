@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ג'ם · מקשיב</title>
+<meta name="theme-color" content="#0b0a1f">
+<meta name="color-scheme" content="dark">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<main class="app">
+  <header class="top">
+    <h1>ג'ם <span class="dot">·</span> <span class="sub">מקשיב למוזיקה</span></h1>
+    <p class="lead">מניחים את הטלפון ליד הנגינה, והוא מראה מה שומעים: סולם, קצב, מקצב וכלים. הוא לא מנגן ולא מקליט.</p>
+  </header>
+
+  <button id="go" class="go" type="button">
+    <span class="go-ico" id="goIco" aria-hidden="true">🎧</span><span id="goTxt">התחל להקשיב</span>
+  </button>
+  <div id="status" class="status" role="status" aria-live="polite">
+    <span id="statusTxt">לוחצים על הכפתור ומאשרים גישה למיקרופון</span>
+    <span class="meter" aria-hidden="true"><span id="meterBar"></span></span>
+  </div>
+
+  <section class="grid" aria-label="הניתוח">
+    <article class="card key" id="cKey">
+      <h2>סולם</h2>
+      <div class="key-row"><div class="big" id="keyHe">—</div><div class="small" id="keyEn" dir="ltr"></div></div>
+      <div class="conf"><span class="conf-bar"><span id="keyConf"></span></span><span id="keyConfTxt" class="conf-txt"></span></div>
+      <div class="note" id="keyAlt"></div>
+      <div class="chord-now" id="cChord"><span class="lbl">אקורד עכשיו</span><span class="chord-v" id="chordHe">—</span><span class="small" id="chordEn" dir="ltr"></span></div>
+    </article>
+
+    <article class="card tempo" id="cTempo">
+      <h2>קצב</h2>
+      <div class="big" dir="ltr"><span id="bpm">—</span><span class="unit">BPM</span></div>
+      <div class="beats" id="beats" dir="ltr" aria-hidden="true"></div>
+      <div class="note" id="tempoNote"></div>
+    </article>
+
+    <article class="card rhythm" id="cRhythm">
+      <h2>מקצב</h2>
+      <div class="rows">
+        <div class="row"><span class="lbl">משקל</span><span class="val" id="meter" dir="ltr">—</span></div>
+        <div class="row"><span class="lbl">תחושה</span><span class="val" id="feel">—</span></div>
+        <div class="row"><span class="lbl">צפיפות</span><span class="val" id="density">—</span></div>
+      </div>
+      <div class="note" id="rhythmNote"></div>
+    </article>
+
+    <article class="card inst" id="cInst">
+      <h2>כלים <span class="h2-sub">נראה ש…</span></h2>
+      <ul class="inst-list" id="instList"></ul>
+      <div class="note">הערכה לפי הצליל, לא זיהוי מדויק.</div>
+    </article>
+  </section>
+
+  <footer class="foot">
+    <span>הכול קורה בטלפון. שום צליל לא נשלח לשום מקום.</span>
+    <span class="ver" id="ver"></span>
+  </footer>
+  <pre id="dbg" class="dbg" hidden></pre>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
